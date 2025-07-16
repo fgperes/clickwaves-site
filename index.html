@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clickwaves - Agência de Marketing Digital</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        body {
+            background-color: #0A0A0A;
+            color: #fff;
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 50px;
+            background: #111;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            text-transform: uppercase;
+            color: #ff5e00;
+        }
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        nav ul li {
+            margin: 0 15px;
+        }
+        nav ul li a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: 400;
+            transition: 0.3s;
+        }
+        nav ul li a:hover {
+            color: #ff5e00;
+        }
+        .hero {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero .carousel {
+            display: flex;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            transition: transform 1s ease-in-out;
+        }
+        .hero .carousel img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .hero-content h1 {
+            font-size: 3rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+            z-index: 10;
+        }
+        .hero-content p {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            z-index: 10;
+        }
+        .btn {
+            display: inline-block;
+            background: #ff5e00;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: 0.3s;
+            z-index: 10;
+        }
+        .btn:hover {
+            background: #e64c00;
+        }
+        .services, .portfolio, .contact {
+            padding: 100px 50px;
+            text-align: center;
+        }
+        .services h2, .portfolio h2, .contact h2 {
+            margin-bottom: 40px;
+            font-size: 2rem;
+        }
+        .service-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        .service-card {
+            background: #222;
+            padding: 30px;
+            border-radius: 10px;
+            width: 30%;
+        }
+        .service-card img {
+            width: 100%;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+        .portfolio-gallery {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+        }
+        .portfolio-item img {
+            width: 100%;
+            border-radius: 10px;
+        }
+        footer {
+            background: #111;
+            text-align: center;
+            padding: 20px;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">Clickwaves</div>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Serviços</a></li>
+                <li><a href="#portfolio">Portfólio</a></li>
+                <li><a href="#contact">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <section id="home" class="hero">
+        <div class="carousel">
+            <img src="https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg" alt="Imagem 1">
+            <img src="https://images.pexels.com/photos/1181342/pexels-photo-1181342.jpeg" alt="Imagem 2">
+            <img src="https://images.pexels.com/photos/3182761/pexels-photo-3182761.jpeg" alt="Imagem 3">
+        </div>
+        <div class="hero-content">
+            <h1>Potencie a sua marca com estratégias inovadoras</h1>
+            <p>Marketing digital de alta performance para levar o seu negócio ao próximo nível.</p>
+            <a href="#contact" class="btn">Fale Connosco</a>
+        </div>
+    </section>
+    
+    <section id="services" class="services">
+        <h2>Nossos Serviços</h2>
+        <div class="service-container">
+            <div class="service-card">
+                <img src="https://www.ourviewdesign.pt/wp-content/uploads/2021/04/avenca-gesta%CC%83o-de-redes-sociais.jpg">
+                <h3>Gestão de Redes Sociais</h3>
+            </div>
+            <div class="service-card">
+                <img src="https://pratiqideias.com.br/wp-content/uploads/2020/09/google-ads.jpg">
+                <h3>Google Ads & SEO</h3>
+            </div>
+            <div class="service-card">
+                <img src="https://w3convert.com/wp-content/uploads/2023/06/impactos-da-ia-740x520.png">
+                <h3>Web Design</h3>
+            </div>
+        </div>
+    </section>
+    
+    <section id="portfolio" class="portfolio">
+        <h2>Nosso Portfólio</h2>
+        <div class="portfolio-gallery">
+            <div class="portfolio-item"><img src="https://images.pexels.com/photos/3184326/pexels-photo-3184326.jpeg" alt="Projeto 1"></div>
+            <div class="portfolio-item"><img src="https://images.pexels.com/photos/3183196/pexels-photo-3183196.jpeg" alt="Projeto 2"></div>
+            <div class="portfolio-item"><img src="https://images.pexels.com/photos/3182761/pexels-photo-3182761.jpeg" alt="Projeto 3"></div>
+        </div>
+    </section>
+    
+    <footer>
+        <p>&copy; 2025 Clickwaves. Todos os direitos reservados.</p>
+    </footer>
+    
+    <script>
+        gsap.from(".hero-content", {opacity: 0, y: 50, duration: 1});
+
+        let currentIndex = 0;
+        const images = document.querySelectorAll('.hero .carousel img');
+        const totalImages = images.length;
+
+        function changeImage() {
+            currentIndex = (currentIndex + 1) % totalImages;
+            document.querySelector('.hero .carousel').style.transform = `translateX(-${currentIndex * 100}%)`;
+        }
+
+        setInterval(changeImage, 4000); // Muda de imagem a cada 4 segundos
+    </script>
+</body>
+</html>
