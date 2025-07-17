@@ -8,138 +8,74 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Poppins', sans-serif;
-        }
-        body {
-            background-color: #0A0A0A;
-            color: #fff;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+        body { background-color: #0A0A0A; color: #fff; }
         header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 50px;
-            background: #111;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 20px 50px; background: #111;
+            position: fixed; width: 100%; top: 0; z-index: 1000;
         }
         .logo {
-            font-size: 24px;
-            font-weight: bold;
-            text-transform: uppercase;
-            color: #ff5e00;
+            display: flex; align-items: center; font-size: 24px; font-weight: bold;
+            text-transform: uppercase; color: #ff5e00;
         }
-        nav ul {
-            display: flex;
-            list-style: none;
-        }
-        nav ul li {
-            margin: 0 15px;
-        }
+        .logo svg { width: 40px; height: 40px; margin-right: 10px; fill: #ff5e00; }
+        nav ul { display: flex; list-style: none; }
+        nav ul li { margin: 0 15px; }
         nav ul li a {
-            text-decoration: none;
-            color: #fff;
-            font-weight: 400;
-            transition: 0.3s;
+            text-decoration: none; color: #fff; font-weight: 400; transition: 0.3s;
         }
-        nav ul li a:hover {
-            color: #ff5e00;
-        }
-        .hero {
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-        .hero .carousel {
-            display: flex;
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            transition: transform 1s ease-in-out;
-        }
-        .hero .carousel img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-        .hero-content h1 {
-            font-size: 3rem;
-            font-weight: bold;
-            margin-bottom: 10px;
-            z-index: 10;
-        }
-        .hero-content p {
-            font-size: 1.2rem;
-            margin-bottom: 20px;
-            z-index: 10;
-        }
+        nav ul li a:hover { color: #ff5e00; }
+        .hero { height: 100vh; display: flex; justify-content: center; align-items: center; text-align: center; position: relative; overflow: hidden; }
+        .hero .carousel { display: flex; position: absolute; width: 100%; height: 100%; transition: transform 1s ease-in-out; }
+        .hero .carousel img { width: 100%; height: 100%; object-fit: cover; }
+        .hero-content h1 { font-size: 3rem; font-weight: bold; margin-bottom: 10px; z-index: 10; }
+        .hero-content p { font-size: 1.2rem; margin-bottom: 20px; z-index: 10; }
         .btn {
-            display: inline-block;
-            background: #ff5e00;
-            color: #fff;
-            padding: 10px 20px;
-            border-radius: 5px;
-            text-decoration: none;
-            transition: 0.3s;
-            z-index: 10;
+            display: inline-block; background: #ff5e00; color: #fff;
+            padding: 10px 20px; border-radius: 5px;
+            text-decoration: none; transition: 0.3s; z-index: 10;
         }
-        .btn:hover {
-            background: #e64c00;
-        }
+        .btn:hover { background: #e64c00; }
         .services, .portfolio, .contact {
-            padding: 100px 50px;
-            text-align: center;
+            padding: 100px 50px; text-align: center;
         }
         .services h2, .portfolio h2, .contact h2 {
-            margin-bottom: 40px;
-            font-size: 2rem;
+            margin-bottom: 40px; font-size: 2rem;
         }
         .service-container {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
+            display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;
         }
         .service-card {
-            background: #222;
-            padding: 30px;
-            border-radius: 10px;
-            width: 30%;
+            background: #222; padding: 30px; border-radius: 10px; width: 300px;
         }
         .service-card img {
-            width: 100%;
-            border-radius: 10px;
-            margin-bottom: 15px;
+            width: 100%; border-radius: 10px; margin-bottom: 15px;
         }
-        .portfolio-gallery {
-            display: flex;
-            gap: 20px;
-            justify-content: center;
+        .portfolio-gallery { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; }
+        .portfolio-item img { width: 100%; border-radius: 10px; }
+        footer { background: #111; text-align: center; padding: 20px; margin-top: 50px; }
+        form { display: flex; flex-direction: column; gap: 10px; max-width: 400px; margin: 0 auto; }
+        input, textarea {
+            padding: 10px; border: none; border-radius: 5px;
         }
-        .portfolio-item img {
-            width: 100%;
-            border-radius: 10px;
+        input[type="submit"] {
+            background-color: #ff5e00; color: white; cursor: pointer;
         }
-        footer {
-            background: #111;
-            text-align: center;
-            padding: 20px;
-            margin-top: 50px;
+        input[type="submit"]:hover {
+            background-color: #e64c00;
         }
     </style>
 </head>
 <body>
     <header>
-        <div class="logo">Clickwaves</div>
+        <div class="logo">
+            <svg viewBox="0 0 64 64">
+                <path d="M8 8 L24 24 L16 24 L24 40 L20 44 L12 28 L4 28 Z"/>
+                <path d="M30 48 Q40 40, 50 48 T70 48" stroke="#ff5e00" stroke-width="2" fill="none"/>
+            </svg>
+            Clickwaves
+        </div>
         <nav>
             <ul>
                 <li><a href="#home">Home</a></li>
@@ -149,7 +85,7 @@
             </ul>
         </nav>
     </header>
-    
+
     <section id="home" class="hero">
         <div class="carousel">
             <img src="https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg" alt="Imagem 1">
@@ -162,25 +98,25 @@
             <a href="#contact" class="btn">Fale Connosco</a>
         </div>
     </section>
-    
+
     <section id="services" class="services">
         <h2>Nossos Serviços</h2>
         <div class="service-container">
             <div class="service-card">
-                <img src="https://www.ourviewdesign.pt/wp-content/uploads/2021/04/avenca-gesta%CC%83o-de-redes-sociais.jpg">
+                <img src="https://images.pexels.com/photos/1181342/pexels-photo-1181342.jpeg" alt="Gestão de Redes Sociais">
                 <h3>Gestão de Redes Sociais</h3>
             </div>
             <div class="service-card">
-                <img src="https://pratiqideias.com.br/wp-content/uploads/2020/09/google-ads.jpg">
+                <img src="https://images.pexels.com/photos/1181317/pexels-photo-1181317.jpeg" alt="Google Ads & SEO">
                 <h3>Google Ads & SEO</h3>
             </div>
             <div class="service-card">
-                <img src="https://w3convert.com/wp-content/uploads/2023/06/impactos-da-ia-740x520.png">
+                <img src="https://images.pexels.com/photos/2780745/pexels-photo-2780745.jpeg" alt="Web Design">
                 <h3>Web Design</h3>
             </div>
         </div>
     </section>
-    
+
     <section id="portfolio" class="portfolio">
         <h2>Nosso Portfólio</h2>
         <div class="portfolio-gallery">
@@ -189,11 +125,21 @@
             <div class="portfolio-item"><img src="https://images.pexels.com/photos/3182761/pexels-photo-3182761.jpeg" alt="Projeto 3"></div>
         </div>
     </section>
-    
+
+    <section id="contact" class="contact">
+        <h2>Fale Connosco</h2>
+        <form>
+            <input type="text" placeholder="Nome" required>
+            <input type="email" placeholder="Email" required>
+            <textarea placeholder="Mensagem" rows="5" required></textarea>
+            <input type="submit" value="Enviar">
+        </form>
+    </section>
+
     <footer>
         <p>&copy; 2025 Clickwaves. Todos os direitos reservados.</p>
     </footer>
-    
+
     <script>
         gsap.from(".hero-content", {opacity: 0, y: 50, duration: 1});
 
@@ -206,7 +152,7 @@
             document.querySelector('.hero .carousel').style.transform = `translateX(-${currentIndex * 100}%)`;
         }
 
-        setInterval(changeImage, 4000); // Muda de imagem a cada 4 segundos
+        setInterval(changeImage, 4000);
     </script>
 </body>
 </html>
